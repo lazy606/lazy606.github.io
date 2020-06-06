@@ -8,22 +8,26 @@
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
   <title>如何在win10环境下使用Hexo+github免费搭建自己的个人网站 | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title:如何在win10环境下使用Hexo+github免费搭建自己的个人网站  一、搭建环境搭建环境1.下载Node.js网站链接：https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;  点击进入网站并选择LTS版本下载，安装过程为傻瓜式安装，无需过多操作一直点击下一步即可安装完成  2.注册一个GitHub账号并创建仓库网站链接：https:&#x2F;&#x2F;git-scm.com&#x2F; 仓库创">
+  <meta name="description" content="title:如何在win10环境下使用Hexo+github免费搭建自己的个人网站  一、搭建环境搭建环境1.下载Node.js网站链接：https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;  点击进入网站并选择LTS版本下载，安装过程为傻瓜式安装，无需过多操作一直点击下一步即可安装完成  2.注册一个GitHub账号并创建仓库网站链接：https:&#x2F;&#x2F;github.com 仓库创建流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在win10环境下使用Hexo+github免费搭建自己的个人网站">
 <meta property="og:url" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="title:如何在win10环境下使用Hexo+github免费搭建自己的个人网站  一、搭建环境搭建环境1.下载Node.js网站链接：https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;  点击进入网站并选择LTS版本下载，安装过程为傻瓜式安装，无需过多操作一直点击下一步即可安装完成  2.注册一个GitHub账号并创建仓库网站链接：https:&#x2F;&#x2F;git-scm.com&#x2F; 仓库创">
+<meta property="og:description" content="title:如何在win10环境下使用Hexo+github免费搭建自己的个人网站  一、搭建环境搭建环境1.下载Node.js网站链接：https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;  点击进入网站并选择LTS版本下载，安装过程为傻瓜式安装，无需过多操作一直点击下一步即可安装完成  2.注册一个GitHub账号并创建仓库网站链接：https:&#x2F;&#x2F;github.com 仓库创建流">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/Viva%20La%20Vida/AppData/Roaming/Typora/typora-user-images/image-20200605212131350.png">
-<meta property="og:image" content="c:/Users/Viva%20La%20Vida/AppData/Roaming/Typora/typora-user-images/image-20200605212342878.png">
-<meta property="og:image" content="c:/Users/Viva%20La%20Vida/AppData/Roaming/Typora/typora-user-images/image-20200605213021310.png">
-<meta property="og:image" content="c:/Users/Viva%20La%20Vida/Pictures/Screenshots/屏幕截图(226).png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/go_to_github.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/new_repo.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/new_blog_dir.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/open_dir_git.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/shell1.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/shell2.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/shell3.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/change_config.png">
 <meta property="article:published_time" content="2020-06-05T14:06:50.587Z">
-<meta property="article:modified_time" content="2020-06-05T14:06:50.587Z">
+<meta property="article:modified_time" content="2020-06-06T01:52:27.127Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/Viva%20La%20Vida/AppData/Roaming/Typora/typora-user-images/image-20200605212131350.png">
+<meta name="twitter:image" content="http://lazyprogrammer.com/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/go_to_github.png">
   
     <link rel="alternative" href="/atom.xml" title="lazyBlog" type="application/atom+xml">
   
@@ -190,55 +194,56 @@
 <blockquote>
 <p>点击进入网站并选择LTS版本下载，安装过程为傻瓜式安装，无需过多操作一直点击下一步即可安装完成</p>
 </blockquote>
-<h4 id="2-注册一个GitHub账号并创建仓库"><a href="#2-注册一个GitHub账号并创建仓库" class="headerlink" title="2.注册一个GitHub账号并创建仓库"></a>2.注册一个GitHub账号并创建仓库</h4><p>网站链接：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
+<h4 id="2-注册一个GitHub账号并创建仓库"><a href="#2-注册一个GitHub账号并创建仓库" class="headerlink" title="2.注册一个GitHub账号并创建仓库"></a>2.注册一个GitHub账号并创建仓库</h4><p>网站链接：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a></p>
 <p>仓库创建流程：</p>
 <ol>
-<li>点击右上角的加号并选择new repository选项，截图如下：</li>
-</ol>
-<img src="C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605212131350.png" alt="image-20200605212131350" style="zoom:50%;" />
-
-<ol start="2">
+<li><p>点击右上角的加号并选择new repository选项，截图如下：</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/go_to_github.png" class title="go_to_github">
+</li>
 <li><p>进入创建仓库页面，按照如图方式创建仓库：</p>
-<img src="C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605212342878.png" alt="image-20200605212342878" style="zoom:50%;" />
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/new_repo.png" class title="new_repo">
 
 </li>
 </ol>
-<h4 id="3-下载git"><a href="#3-下载git" class="headerlink" title="3.下载git"></a>3.下载git</h4><p>网站连接：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a></p>
+<h4 id="3-下载git"><a href="#3-下载git" class="headerlink" title="3.下载git"></a>3.下载git</h4><p>网站连接： <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
 <blockquote>
 <p>由于是外网所以下载可能会较慢，安装过程依然是一直点击下一步即可</p>
 </blockquote>
 <h2 id="二、创建博客并配置"><a href="#二、创建博客并配置" class="headerlink" title="二、创建博客并配置"></a>二、创建博客并配置</h2><ol>
-<li>在自己熟悉的位置创建博客目录文件夹，如图：</li>
-</ol>
-<img src="C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605213021310.png" alt="image-20200605213021310" style="zoom:50%;" />
-
-<ol start="2">
-<li>使用git的命令行打开该文件夹：</li>
-</ol>
-<img src="C:\Users\Viva La Vida\Pictures\Screenshots\屏幕截图(226).png" alt="屏幕截图(226)" style="zoom: 50%;" />
+<li><p>在自己熟悉的位置创建博客目录文件夹，如图：</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/new_blog_dir.png" class title="new_blog_dir">
+</li>
+<li><p>使用git的命令行打开该文件夹：</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/open_dir_git.png" class title="open_blogdir_with_git">
 
 <p>打开后界面如下：</p>
-<p>![image-20200605213646219](C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605213646219.png)</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/shell1.png" class title="shell_window">
+
 <p>后查看是否安装有npm,输入如下：</p>
-<p>![image-20200605213900843](C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605213900843.png)</p>
-<p>之后切换到淘宝的镜像源（因为默认镜像源在国外，下载较慢）执行如下命令：</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/shell2.png" class title="check_npm_installed">
+
+<p>之后切换到淘宝的镜像源（因为默认镜像源在国外,下载较慢）执行如下命令：</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/shell3.png" class title="install_cnpm">
+
+</li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org #安装淘宝的cnpm 管理器</span><br><span class="line">cnpm -v#查看cnpm版本号，检查是否安装成功</span><br></pre></td></tr></table></figure>
 
-<p>cnpm安装完成之后，安装Hexo框架，命令如下：</p>
+<p>​        cnpm安装完成之后，安装Hexo框架，命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo v#查看版本号，检查是否安装成功</span><br></pre></td></tr></table></figure>
 
-<p>安装完成之后，开始初始化项目，命令如下：</p>
+<p>​        安装完成之后，开始初始化项目，命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init #默认为在当前目录下初始化项目</span><br></pre></td></tr></table></figure>
 
-<p>初始化后，启动博客：</p>
+<p>​        初始化后，启动博客：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>![image-20200605215022508](C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605215022508.png)</p>
-<p>由最后一行可知，博客运行在本地的4000端口，我们复制url，并在浏览器中打开，如果能看到博客的页面证明项目初始化成功</p>
+<p>​        由最后一行可知，博客运行在本地的4000端口，我们复制url，并在浏览器中打开，如果能看到博客的页面证明项目初始化成功</p>
 <h2 id="三、将博客部署到远端"><a href="#三、将博客部署到远端" class="headerlink" title="三、将博客部署到远端"></a>三、将博客部署到远端</h2><h4 id="1-安装git部署插件"><a href="#1-安装git部署插件" class="headerlink" title="1.安装git部署插件"></a>1.安装git部署插件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-配置-config-yml文件"><a href="#2-配置-config-yml文件" class="headerlink" title="2.配置_config.yml文件"></a>2.配置_config.yml文件</h4><p>在你生成的博客目录下，点击打开_config.yml文件，在文件中找到如下内容</p>
-<p>![image-20200605220028527](C:\Users\Viva La Vida\AppData\Roaming\Typora\typora-user-images\image-20200605220028527.png)</p>
+<h4 id="2-配置-config-yml文件"><a href="#2-配置-config-yml文件" class="headerlink" title="2.配置_config.yml文件"></a>2.配置_config.yml文件</h4><p>在你生成的博客目录下，点击打开_config.yml文件，在文件中找到如下内容:</p>
+<img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/change_config.png" class title="change_config">
+
 <h4 id="3-部署到远端"><a href="#3-部署到远端" class="headerlink" title="3.部署到远端"></a>3.部署到远端</h4><p>配置完文件后，执行下列命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
