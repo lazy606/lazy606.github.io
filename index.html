@@ -158,6 +158,113 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-为个人博客设置主题和设置博客细节" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">为个人博客设置主题和设置博客细节</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/" class="archive-article-date">
+  	<time datetime="2020-06-06T13:06:04.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、如何设置个人博客的主题"><a href="#一、如何设置个人博客的主题" class="headerlink" title="一、如何设置个人博客的主题"></a>一、如何设置个人博客的主题</h2><h4 id="1-挑选主题"><a href="#1-挑选主题" class="headerlink" title="1.挑选主题"></a>1.挑选主题</h4><ol>
+<li><p>到官网去挑选喜欢的主题（但是有些主题页面可能丢失），网址如下：</p>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+</li>
+<li><p>在csdn去搜素相关博客主题，csdn官网如下：</p>
+<p><a href="https://www.csdn.net/" target="_blank" rel="noopener">https://www.csdn.net/</a></p>
+</li>
+<li><p>可以自己到百度上去搜索相关主题。</p>
+</li>
+<li><p>推荐主题：</p>
+<p><a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> </p>
+</li>
+</ol>
+<h4 id="2-将主题复制到themes文件夹下并修改配置文件"><a href="#2-将主题复制到themes文件夹下并修改配置文件" class="headerlink" title="2.将主题复制到themes文件夹下并修改配置文件"></a>2.将主题复制到themes文件夹下并修改配置文件</h4><ol>
+<li><p>将主题资源复制到themes文件夹内</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git <span class="built_in">clone</span>问指令，https://github.com/litten/hexo-theme-yilia.git对应你选中的主题的资源</span></span><br><span class="line"><span class="meta">#</span><span class="bash">的url， themes/yilia为themes文件夹下创建的主题对应的本地文件夹，示例如下：</span></span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改_config.yml文件，示例如下：</p>
+<img src="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/modify_config.png" class title="modify_themes_config">
+</li>
+<li><p>将修改主题后的页面重新加载并部署到远端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean	#清除缓存</span><br><span class="line">hexo g		#重新生成</span><br><span class="line">hexo d		#再次部署</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果如图：</p>
+<img src="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/themes_modify_result.png" class title="modify_themes_result">  
+
+</li>
+</ol>
+<h2 id="二、如何设置博客细节"><a href="#二、如何设置博客细节" class="headerlink" title="二、如何设置博客细节"></a>二、如何设置博客细节</h2><h4 id="1-修改主题的配置文件"><a href="#1-修改主题的配置文件" class="headerlink" title="1.修改主题的配置文件"></a>1.修改主题的配置文件</h4><p>在themes目录下找到存放你主题的文件夹（此处以yilia为例），打开文件夹，文件夹中也有一个名为_config.yml的文件，用于设置主题中的各种细节，此处来讲解如何设置头像和其他个人页面链接</p>
+<ol>
+<li><p>设置头像：</p>
+<p>打开_config.yml文件，内容如图所示：</p>
+<img src="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/theme_detail.png" class title="theme_detail_config">  
+
+<p>其中/asset/first_qiao.jpg，是指根目录下的asset文件夹下的first_qiao.jpg文件，其中根目录为你的博客项目所在目录下的public目录。</p>
+</li>
+<li><p>设置其他个人页面链接：</p>
+<img src="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/link.png" class title="link"> 
+
+<p>其对应页面中的如下内容：</p>
+<img src="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/link_in_page.png" class title="link_in_page"> 
+<p>设置你想要链接页面的url即可，如果链接某些页面可以使用注释停止使用。</p>
+</li>
+</ol>
+<h4 id="2-更多配置"><a href="#2-更多配置" class="headerlink" title="2.更多配置"></a>2.更多配置</h4><p>可根据需求修改修改配置，文件各配置信息的上方注释有相关提示，如有问题可以给博主留言。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何在win10环境下使用Hexo+github免费搭建自己的个人网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -233,7 +340,7 @@
 <img src="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/change_config.png" class title="change_config">
 
 <h4 id="3-部署到远端"><a href="#3-部署到远端" class="headerlink" title="3.部署到远端"></a>3.部署到远端</h4><p>配置完文件后，执行下列命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件</span><br><span class="line">hexo d# 之后按照要求填写github的用户名及密码</span><br></pre></td></tr></table></figure>
 
 <h4 id="4-检查是否部署成功"><a href="#4-检查是否部署成功" class="headerlink" title="4.检查是否部署成功"></a>4.检查是否部署成功</h4><p>在浏览器中输入 http://你的GitHub昵称.github.io, 如果出现页面内容，那么恭喜你个人博客基本搭建完成。</p>
 <h2 id="四、设置页面内容和书写博客"><a href="#四、设置页面内容和书写博客" class="headerlink" title="四、设置页面内容和书写博客"></a>四、设置页面内容和书写博客</h2><p>博主将在下一篇博客中向你介绍如何设置页面中待完善的内容。</p>
