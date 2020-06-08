@@ -6,17 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
-  <title>Archives: 2020/6 | lazyBlog</title>
+  <title>servlet相关知识 | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="From Zero to the DevOps">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lazyBlog">
-<meta property="og:url" content="http://lazyprogrammer.com/archives/2020/06/index.html">
+  <meta name="description" content="一、HttpServletRequest类1.主要用法①获取请求参数值123456public class ServletTest extends HttpServlet &amp;#123;    @Override    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletExcept">
+<meta property="og:type" content="article">
+<meta property="og:title" content="servlet相关知识">
+<meta property="og:url" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="From Zero to the DevOps">
+<meta property="og:description" content="一、HttpServletRequest类1.主要用法①获取请求参数值123456public class ServletTest extends HttpServlet &amp;#123;    @Override    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletExcept">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/1.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/2.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/3.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/4.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/5.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/6.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/8.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/9.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/10.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/11.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/12.png">
+<meta property="article:published_time" content="2020-06-08T13:06:03.178Z">
+<meta property="article:modified_time" content="2020-06-08T14:46:50.960Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/1.png">
   
     <link rel="alternative" href="/atom.xml" title="lazyBlog" type="application/atom+xml">
   
@@ -156,157 +170,225 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-servlet相关知识" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      servlet相关知识
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="archive-article-date">
+
+        
+        <a href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="archive-article-date">
   	<time datetime="2020-06-08T13:06:03.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">servlet相关知识</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、HttpServletRequest类"><a href="#一、HttpServletRequest类" class="headerlink" title="一、HttpServletRequest类"></a>一、HttpServletRequest类</h2><h4 id="1-主要用法"><a href="#1-主要用法" class="headerlink" title="1.主要用法"></a>1.主要用法</h4><h6 id="①获取请求参数值"><a href="#①获取请求参数值" class="headerlink" title="①获取请求参数值"></a>①获取请求参数值</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletTest</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">        System.out.println(username);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/1.png" class>
 
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/2.png" class>
+
+<a id="more"></a>
+
+<h6 id="②获取请求参数列表"><a href="#②获取请求参数列表" class="headerlink" title="②获取请求参数列表"></a>②获取请求参数列表</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String[] hobbies = req.getParameterValues(<span class="string">"hobby"</span>);</span><br><span class="line">        System.out.println(Arrays.asList(hobbies));</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/3.png" class>
+
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/4.png" class>
+
+<p>在获取请求参数列表时，使用post请求可能发生中文乱码问题，示例如下：</p>
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/5.png" class>
+
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/6.png" class>
+
+
+
+<p>解决方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.setCharacterEncoding(<span class="string">"utf-8"</span>);<span class="comment">//注意修改编码集要在获取参数之前，否则获取的参数仍然乱码</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="③请求转发"><a href="#③请求转发" class="headerlink" title="③请求转发"></a>③请求转发</h6><p>​    大多数业务在处理时依赖多个部分，而程序编写时往往将其功能分开，这导致在某业务处理完后需要被转发到另一个部分完成下一步业务的处理，此时就需要使用到请求的转发，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模块一</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//获取请求信息</span></span><br><span class="line">        String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">        <span class="comment">//处理业务</span></span><br><span class="line">        System.out.println(username);</span><br><span class="line">        <span class="comment">//确认业务处理完毕</span></span><br><span class="line">        req.setAttribute(<span class="string">"confirm1"</span>,<span class="string">"yes"</span>);</span><br><span class="line">        <span class="comment">//为业务定向并转发业务</span></span><br><span class="line">        req.getRequestDispatcher(<span class="string">"/servlet2"</span>).forward(req,resp);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模块二</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//获取请求信息</span></span><br><span class="line">        String hobby = req.getParameter(<span class="string">"hobby"</span>);</span><br><span class="line">         <span class="comment">//确认是否处理上级事务</span></span><br><span class="line">        Object confirm = req.getAttribute(<span class="string">"confirm1"</span>);</span><br><span class="line">        <span class="comment">//处理事务</span></span><br><span class="line">        System.out.println(hobby);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/8.png" class>
+
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/9.png" class>
+
+<h2 id="二、HttpServletResponse类"><a href="#二、HttpServletResponse类" class="headerlink" title="二、HttpServletResponse类"></a>二、HttpServletResponse类</h2><h4 id="1-主要用法-1"><a href="#1-主要用法-1" class="headerlink" title="1.主要用法"></a>1.主要用法</h4><p>HttpServletResponse 类和 HttpServletRequest 类一样。每次请求进来，Tomcat 服务器都会创建一个 Response 对象传 递给 Servlet 程序去使用。HttpServletRequest 表示请求过来的信息，HttpServletResponse 表示所有响应的信息， 我们如果需要设置返回给客户端的信息，都可以通过 HttpServletResponse 对象来进行设置</p>
+<h6 id="①向客户端回传数据-此处使用的是字节流回传"><a href="#①向客户端回传数据-此处使用的是字节流回传" class="headerlink" title="①向客户端回传数据(此处使用的是字节流回传)"></a>①向客户端回传数据(此处使用的是字节流回传)</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        PrintWriter writer = resp.getWriter();</span><br><span class="line">        writer.write(<span class="string">"response"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/10.png" class>
+
+<p>但在回传中可能会产生乱码的问题，示例如下：</p>
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/11.png" class>
+
+<p>原因是默认的编码集为ISO-8859-1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String characterEncoding = resp.getCharacterEncoding();</span><br><span class="line">System.out.println(characterEncoding);</span><br></pre></td></tr></table></figure>
+
+<p>解决方法如下：</p>
+<p>法一（不推荐）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resp.setCharacterEncoding(&quot;utf-8&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>但是设置完编码集后再浏览器端仍然显示乱码,是因为浏览器端默认的解码方式不是utf-8，</p>
+<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/12.png" class>
+
+<p>所以设置完还要再设置请求头中的信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resp.setHeader(<span class="string">"Content-type"</span>,<span class="string">"text/html; charset=UTF-8 "</span>);</span><br></pre></td></tr></table></figure>
+
+<p>法二：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resp.setContentType(<span class="string">"text/html; charset=UTF-8"</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="②请求重定向"><a href="#②请求重定向" class="headerlink" title="②请求重定向"></a>②请求重定向</h6><p>有时候网页再迭代升级的过程之中会将一些页面修改位置，但是用户再请求时仍按原来的路径请求，所以就要再老的页面中添加请求重定向，而重定向包含两部分，第一部分告知浏览器位置以修改，第二部分告知修改后的位置</p>
+<p>老页面代码示例：</p>
+<p>法一（不推荐）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"老页面被访问"</span>);</span><br><span class="line">        System.out.println(req);</span><br><span class="line">        <span class="comment">//告知位置已修改</span></span><br><span class="line">        resp.setStatus(<span class="number">302</span>);</span><br><span class="line">        <span class="comment">//告知修改后的位置</span></span><br><span class="line">        resp.setHeader(<span class="string">"Location"</span>,<span class="string">"http://localhost:8080/工程路径/资源路径"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>法二：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resp.sendRedirect(<span class="string">"http://localhost:8080/工程路径/资源路径"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lazyprogrammer.com/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-07T13:16:29.808Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown的使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/">Markdown的使用</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/" class="archive-article-date">
-  	<time datetime="2020-06-06T13:06:04.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">为个人博客设置主题和设置博客细节</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2020-06-05T14:06:50.587Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">如何在win10环境下使用Hexo+github免费搭建自己的个人网站</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/04/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-04T02:19:17.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -329,8 +411,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
