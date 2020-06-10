@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
-  <title>Archives | lazyBlog</title>
+  <title>Jsp学习复习笔记 | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="From Zero to the DevOps">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lazyBlog">
-<meta property="og:url" content="http://lazyprogrammer.com/archives/index.html">
+  <meta name="description" content="一、jsp基本介绍1.什么是jsp​    jsp是java service pages的简写，jsp本质上来讲也是servlet程序，由源码可知： 123public final class index extends org.apache.jasper.runtime.HttpJspBase    implements org.apache.jasper.runtime.JspSourceDe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jsp学习复习笔记">
+<meta property="og:url" content="http://lazyprogrammer.com/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="From Zero to the DevOps">
+<meta property="og:description" content="一、jsp基本介绍1.什么是jsp​    jsp是java service pages的简写，jsp本质上来讲也是servlet程序，由源码可知： 123public final class index extends org.apache.jasper.runtime.HttpJspBase    implements org.apache.jasper.runtime.JspSourceDe">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-10T09:30:47.026Z">
+<meta property="article:modified_time" content="2020-06-10T13:45:41.550Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
   
@@ -156,238 +158,255 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Jsp学习复习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Jsp学习复习笔记
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+
+        
+        <a href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2020-06-10T09:30:47.026Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">Jsp学习复习笔记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、jsp基本介绍"><a href="#一、jsp基本介绍" class="headerlink" title="一、jsp基本介绍"></a>一、jsp基本介绍</h2><h4 id="1-什么是jsp"><a href="#1-什么是jsp" class="headerlink" title="1.什么是jsp"></a>1.什么是jsp</h4><p>​    jsp是java service pages的简写，jsp本质上来讲也是servlet程序，由源码可知：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">index</span> <span class="keyword">extends</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">HttpJspBase</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">JspSourceDependent</span>,</span></span><br><span class="line"><span class="class">                 <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">JspSourceImports</span></span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>​    其中org.apache.jasper.runtime.HttpJspBase继承了HttpServlet类，所以可知jsp也是servlet程序。</p>
+<h4 id="2-为什么要使用jsp"><a href="#2-为什么要使用jsp" class="headerlink" title="2.为什么要使用jsp"></a>2.为什么要使用jsp</h4><p>​    因为在使用servlet时，向客户端发送HTML页面，以及维护servlet程序十分麻烦所以jsp得到应用。</p>
+<h4 id="3-servlet语法"><a href="#3-servlet语法" class="headerlink" title="3.servlet语法"></a>3.servlet语法</h4><pre><code>###### ①jsp中的头部的page指令</code></pre><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br></pre></td></tr></table></figure>
 
+<p>这就是jsp的头部，用来配置jsp，可进行如下配置：</p>
+<ol>
+<li>language 属性：用来配置jsp中应用的语言，一般为java语言不做修改；</li>
+<li>import 属性：用来配置jsp中导入的包等信息；</li>
+<li>errorPage 属性： 用来配置当页面报错时将跳转的页面；</li>
+<li>isErrorPage 属性：用来指明当前页面是否错误页面，将会在jsp的java源文件中的jsp类中添加一个Exception类的对象作为属性，用于获取异常信息；</li>
+<li>autoflush属性：用来设置out对象是否会自动刷新缓冲区中的内容；</li>
+<li>buffer属性：用来设置out对象缓冲区的大小；</li>
+<li>pageEncoding属性：用来设置当前页面的编码方式；</li>
+<li>contentType属性：用来设置接受jsp返回的数据类型；</li>
+<li>session属性：用来设置访问jsp页面时是否会创建session对象；</li>
+<li>extends属性：用来设置jsp默认继承谁；</li>
+</ol>
+<h6 id="②jsp中常用的脚本"><a href="#②jsp中常用的脚本" class="headerlink" title="②jsp中常用的脚本"></a>②jsp中常用的脚本</h6><p>​    第一种：</p>
+<p>​        声明脚本，格式如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! 声明Java代码 %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        声明脚本用来在jsp的类中声明相关的属性、代码块、内部类、方法，但是较少使用。</p>
+<p>​    第二种：</p>
+<p>​        表达式脚本，格式如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= 表达式 %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        使用示例如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= <span class="number">12</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    表达式脚本用来向页面发送数据显示到页面。</p>
+<p>​    第三种：</p>
+<p>​        代码脚本，格式如下：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% java代码 %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        脚本代码用来在jsp中使用Java语言</p>
+<h6 id="③jsp中的三类注释"><a href="#③jsp中的三类注释" class="headerlink" title="③jsp中的三类注释"></a>③jsp中的三类注释</h6><p>​    html注释：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html注释 --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        该注解在jsp中不起到注解作用，会传到页面中起到注解作用。</p>
+<p>​    java注解；</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="comment">//java注解 %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        该注解在jsp的源文件中起作用，在jsp中不起作用。</p>
+<p>​    jsp注解；</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-- jsp注解 --%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        此注解为jsp中的注解。</p>
+<h6 id="④jsp中的九大内置对象-此处书写其变量名"><a href="#④jsp中的九大内置对象-此处书写其变量名" class="headerlink" title="④jsp中的九大内置对象(此处书写其变量名)"></a>④jsp中的九大内置对象(此处书写其变量名)</h6><ol>
+<li>request，HttpServletRequest请求对象，用来对http请求进行操作，可以获取请求的信息；</li>
+<li>response,  HttpServletResponse响应对象，用来对http响应进行操作，可以设置响应；</li>
+<li>session,  HttpSession会话对象，可以使用该对象在会话中传递参数；</li>
+<li>pageContext，PageContextjsp上下文对象，可以使用该对象在当前页面中传递参数；</li>
+<li>page，指向当前jsp的对象；</li>
+<li>config,  ServletConfig对象，获取servlet组件的参数信息；</li>
+<li>application，ServletContext对象，在整个web应用中传递参数信息；</li>
+<li>out， jsp输出流对象，用于向客户端输出；</li>
+<li>exception，异常对象；</li>
+</ol>
+<h6 id="⑤四大域对象"><a href="#⑤四大域对象" class="headerlink" title="⑤四大域对象"></a>⑤四大域对象</h6><ol>
+<li><p>pageContext;</p>
+</li>
+<li><p>request;</p>
+</li>
+<li><p>session;</p>
+</li>
+<li><p>application;</p>
+<p>四个域对象按照作用域的访问从小到大排列，其中：</p>
+<p>pageContext作用域为当前jsp，</p>
+<p>request作用范围为当次请求，</p>
+<p>session作用范围为当前会话，</p>
+<p>application作用范围为当前web应用；</p>
+</li>
+</ol>
+<h6 id="⑥jsp常用标签"><a href="#⑥jsp常用标签" class="headerlink" title="⑥jsp常用标签"></a>⑥jsp常用标签</h6><p>​    第一个，静态标签：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    网页头部&lt;br&gt;</span><br><span class="line">    网页主题&lt;br&gt;</span><br><span class="line">    &lt;%<span class="meta">@include</span> file=<span class="string">"/2.jsp"</span>%&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    网页页脚</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    使用&lt;%@include file=”2.jsp”%&gt;来使用静态标签调用2.jsp</p>
+<p>​    第二个，动态标签</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">网页头部&lt;br&gt;</span><br><span class="line">网页主题&lt;br&gt;</span><br><span class="line"> &lt;jsp:include page="/2.jsp" &gt;&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    使用&lt;jsp:include page=”/2.jsp” &gt;来使用动态标签调用2.jsp，动态标签还可以向2.jsp传递参数，</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page=<span class="string">"/2.jsp"</span> &gt;</span><br><span class="line">    &lt;jsp:param name=<span class="string">"param1"</span> value=<span class="string">"jsp1c传来的参数"</span>/&gt;</span><br><span class="line">&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        静态标签和动态标签的区别在于jsp的源代码的不同，</p>
+<p>​            静态标签如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">out.write(<span class="string">"    网页头部&lt;br&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"    网页主题&lt;br&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"    "</span>);</span><br><span class="line">   out.write(<span class="string">"\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"&lt;html&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"&lt;head&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"    &lt;title&gt;Title&lt;/title&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"&lt;/head&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"&lt;body&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"    网页页脚&lt;br&gt;\r\n"</span>);</span><br><span class="line">   out.write(<span class="string">"    "</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​            动态态标签如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">out.write(<span class="string">"    网页头部&lt;br&gt;\r\n"</span>);</span><br><span class="line">     out.write(<span class="string">"    网页主题&lt;br&gt;\r\n"</span>);</span><br><span class="line">     out.write(<span class="string">"\r\n"</span>);</span><br><span class="line">     out.write(<span class="string">"    "</span>);</span><br><span class="line">     org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, <span class="string">"/2.jsp"</span> + <span class="string">"?"</span> + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(<span class="string">"param1"</span>, request.getCharacterEncoding())+ <span class="string">"="</span> + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(<span class="string">"jsp1传来的参数"</span>, request.getCharacterEncoding()), out, <span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="⑦转发标签"><a href="#⑦转发标签" class="headerlink" title="⑦转发标签"></a>⑦转发标签</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page="2.jsp"&gt;&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    转发标签起到的作用与servlet中实现的请求转发相同。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lazyprogrammer.com/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-09T12:49:43.918Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaWeb编写过程复习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/">JavaWeb编写过程复习</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  	<time datetime="2020-06-09T12:24:20.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">博客中图片显示问题的解决</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-06-08T13:06:03.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">servlet相关知识</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-07T13:16:29.808Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/">Markdown的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/" class="archive-article-date">
-  	<time datetime="2020-06-06T13:06:04.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">为个人博客设置主题和设置博客细节</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2020-06-05T14:06:50.587Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">如何在win10环境下使用Hexo+github免费搭建自己的个人网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/04/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-04T02:19:17.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -410,8 +429,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
