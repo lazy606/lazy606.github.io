@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
-  <title>Archives: 2020 | lazyBlog</title>
+  <title>EL表达式和JSTL学习复习(1) | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="From Zero to the DevOps">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lazyBlog">
-<meta property="og:url" content="http://lazyprogrammer.com/archives/2020/index.html">
+  <meta name="description" content="一、EL表达式复习#### 1.EL表达式是什么​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EL表达式和JSTL学习复习(1)">
+<meta property="og:url" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="From Zero to the DevOps">
+<meta property="og:description" content="一、EL表达式复习#### 1.EL表达式是什么​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/D:%5Cblog%5Clazy606%5Csource_posts%5CEL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)%5C1.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/1.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/2.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/3.png">
+<meta property="article:published_time" content="2020-06-11T12:46:13.348Z">
+<meta property="article:modified_time" content="2020-06-11T14:17:51.416Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/D:%5Cblog%5Clazy606%5Csource_posts%5CEL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)%5C1.png">
   
     <link rel="alternative" href="/atom.xml" title="lazyBlog" type="application/atom+xml">
   
@@ -156,265 +163,231 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-EL表达式和JSTL学习复习(1)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      EL表达式和JSTL学习复习(1)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/" class="archive-article-date">
+
+        
+        <a href="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/" class="archive-article-date">
   	<time datetime="2020-06-11T12:46:13.348Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/">EL表达式和JSTL学习复习(1)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、EL表达式复习"><a href="#一、EL表达式复习" class="headerlink" title="一、EL表达式复习"></a>一、EL表达式复习</h2><pre><code>#### 1.EL表达式是什么</code></pre><p>​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="2-EL表达式的语法"><a href="#2-EL表达式的语法" class="headerlink" title="2.EL表达式的语法"></a>2.EL表达式的语法</h4><p>​    ${ 表达式}</p>
+<pre><code>###### ①运算</code></pre><p>​    第一类：</p>
+<p>​        关系运算即大于、小于、等于等关系运算，与java中的一致。</p>
+<p>​    第二类：</p>
+<p>​        逻辑运算，包括：</p>
+<p>​            且运算：&amp;&amp; 或 and</p>
+<p>​            或运算：|| 或 or</p>
+<p>​            非运算： ！ 或 not</p>
+<p>第三类：</p>
+<p>​    算术运算即加减乘除、取余运算，与java中一致。</p>
+<p>第四类：</p>
+<p>​    empty运算，empty运算用于判断一下情况：</p>
+<ol>
+<li>null对象</li>
+<li>空串</li>
+<li>长度为零的Object类型的数组</li>
+<li>长度为零的List列表</li>
+<li>元素个数为零的Map集合</li>
+</ol>
+<p>第五类：</p>
+<p>​    三元运算：与Java中相同，如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"表达式1"</span>? <span class="string">"表达式2"</span>:<span class="string">"表达式3"</span></span><br></pre></td></tr></table></figure>
 
+<p>第六类：</p>
+<p>​    点运算和[]括号中的运算符</p>
+<p>​    点运算：用来调用相关方法</p>
+<p>​    []中用来屏蔽掉特殊运算(之后会做相应示范)</p>
+<h6 id="②输出Bean的各种属性"><a href="#②输出Bean的各种属性" class="headerlink" title="②输出Bean的各种属性"></a>②输出Bean的各种属性</h6><p>​    第一，输出普通属性：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--    输出普通属性--%&gt;</span><br><span class="line">    $&#123; person.id &#125;&lt;br&gt;</span><br><span class="line">    $&#123; person.name &#125;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    第二，输出数组中的某一个元素：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--输出数组中的某一个--%&gt;</span><br><span class="line">    $&#123;person.phone[<span class="number">0</span>] &#125;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    第三，输出列表以及其中某个元素：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--输出列表--%&gt;</span><br><span class="line">    $&#123; person.subject &#125;&lt;br&gt;</span><br><span class="line">&lt;%--输出列表中的某一项--%&gt;</span><br><span class="line">    $&#123; person.subject[<span class="number">2</span>] &#125;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    第四，输出Map及其中的某个元素：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--输出Map--%&gt;</span><br><span class="line">    $&#123; person.family &#125;&lt;br&gt;</span><br><span class="line">&lt;%--输出Map中的某一项--%&gt;</span><br><span class="line">    $&#123; person.family.dad &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    在此将介绍[]运算的作用，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--介绍[]运算--%&gt;</span><br><span class="line">    未加[]运算：$&#123; person.family.d.o.g &#125;&lt;br&gt;</span><br><span class="line">    加[]运算  ：$&#123; person.family[<span class="string">"d.o.g"</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    结果如下：</p>
+<p><img src="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/D:%5Cblog%5Clazy606%5Csource_posts%5CEL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)%5C1.png" alt="image-20200611213821649"></p>
+<h6 id="③EL中11个隐含对象"><a href="#③EL中11个隐含对象" class="headerlink" title="③EL中11个隐含对象"></a>③EL中11个隐含对象</h6><p>​    第一类，四大域对象(以下为变量名)</p>
+<p>​        pageScope、requestScope、sessionScope、applicationScope</p>
+<p>​        该四大域对象用来获取不同狱中的顺序，如果不指明为哪个域，并且每个域中有相同的参数名时将从最小域找起，找到即停止。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    request.setAttribute(<span class="string">"key"</span>,<span class="string">"request"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"key"</span>,<span class="string">"session"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"key"</span>,<span class="string">"application"</span>);</span><br><span class="line">    pageContext.setAttribute(<span class="string">"key"</span>,<span class="string">"pageContext"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">$&#123; key &#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/1.png" class>
+
+<p>所以在要获取相关域中的参数时要在EL表达式中使用相关的域对象。</p>
+<p>​    第二类，pageContext对象的使用：</p>
+<p>​        一般用于获取request对象，使用request对象来获取请求的各种信息</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    &lt;%</span><br><span class="line">        pageContext.setAttribute(<span class="string">"req"</span>,request);</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;%--获取请求协议--%&gt;</span><br><span class="line">    $&#123; req.scheme&#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取服务器的ip或域名--%&gt;</span><br><span class="line">    $&#123; req.serverName&#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取服务器的端口号--%&gt;</span><br><span class="line">    $&#123; req.serverPort &#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取当前的工程路径--%&gt;</span><br><span class="line">    $&#123; req.contextPath &#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取请求的方式--%&gt;</span><br><span class="line">    $&#123; req.method &#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取请求的主机的ip--%&gt;</span><br><span class="line">    $&#123; req.remoteHost &#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取请求主机的端口号--%&gt;</span><br><span class="line">    $&#123; req.remotePort &#125;&lt;br&gt;</span><br><span class="line">&lt;%--获取会话标识--%&gt;</span><br><span class="line">    $&#123; pageContext.session.id &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    第三类，其他对象的使用：</p>
+<p>​        类1：</p>
+<p>​        param，为Map&lt;String,String&gt;的对象， 可以获取请求的参数</p>
+<p>​        paramValues， 为Map&lt;String, String[]&gt;对象,可以获取有多个值的参数</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;param.username&#125;&lt;br&gt;</span><br><span class="line">    $&#123;paramValues.hobbies[<span class="number">1</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/2.png" class>
+
+<img src="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/3.png" class>
+
+<p>​        类2：</p>
+<p>​            header，为Map&lt;String,String&gt;的对象， 可以获取请求头的参数</p>
+<p>​            headerValues，为Map&lt;String, String[]&gt;对象,可以获取有多个值的参数</p>
+<p>​        类3：</p>
+<p>​            cookie，为Map&lt;String,Cookie&gt;的对象，可以获取cookie的相关信息</p>
+<p>​        类4：</p>
+<p>​            init-param，为Map&lt;String,String&gt;, 可以获取web.xml中的content-param上下文参数</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-10T09:30:47.026Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jsp学习复习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">Jsp学习复习笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-09T12:49:43.918Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/">JavaWeb编写过程复习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  	<time datetime="2020-06-09T12:24:20.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">博客中图片显示问题的解决</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-06-08T13:06:03.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">servlet相关知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-07T13:16:29.808Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/">Markdown的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/" class="archive-article-date">
-  	<time datetime="2020-06-06T13:06:04.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">为个人博客设置主题和设置博客细节</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2020-06-05T14:06:50.587Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">如何在win10环境下使用Hexo+github免费搭建自己的个人网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/04/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-04T02:19:17.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -437,8 +410,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
