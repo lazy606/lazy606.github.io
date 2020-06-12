@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
   <title>EL表达式和JSTL学习复习(1) | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、EL表达式复习#### 1.EL表达式是什么​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。">
+  <meta name="description" content="一、EL表达式复习1.EL表达式是什么​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EL表达式和JSTL学习复习(1)">
 <meta property="og:url" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="一、EL表达式复习#### 1.EL表达式是什么​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。">
+<meta property="og:description" content="一、EL表达式复习1.EL表达式是什么​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/D:%5Cblog%5Clazy606%5Csource_posts%5CEL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)%5C1.png">
 <meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/1.png">
 <meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/2.png">
 <meta property="og:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/3.png">
 <meta property="article:published_time" content="2020-06-11T12:46:13.348Z">
-<meta property="article:modified_time" content="2020-06-11T14:17:51.416Z">
+<meta property="article:modified_time" content="2020-06-11T14:19:19.330Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://lazyprogrammer.com/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/D:%5Cblog%5Clazy606%5Csource_posts%5CEL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)%5C1.png">
@@ -183,11 +183,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、EL表达式复习"><a href="#一、EL表达式复习" class="headerlink" title="一、EL表达式复习"></a>一、EL表达式复习</h2><pre><code>#### 1.EL表达式是什么</code></pre><p>​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。</p>
+        <h2 id="一、EL表达式复习"><a href="#一、EL表达式复习" class="headerlink" title="一、EL表达式复习"></a>一、EL表达式复习</h2><h4 id="1-EL表达式是什么"><a href="#1-EL表达式是什么" class="headerlink" title="1.EL表达式是什么"></a>1.EL表达式是什么</h4><p>​    EL表达式全称Expression Language，是用来替代jsp中的表达式脚本，是因为EL表达式相较于jsp的表达式脚本更为简洁，可读性更好。EL表达式更多时候用于获取域对象中的数据。</p>
 <a id="more"></a>
 
 <h4 id="2-EL表达式的语法"><a href="#2-EL表达式的语法" class="headerlink" title="2.EL表达式的语法"></a>2.EL表达式的语法</h4><p>​    ${ 表达式}</p>
-<pre><code>###### ①运算</code></pre><p>​    第一类：</p>
+<h6 id="①运算"><a href="#①运算" class="headerlink" title="①运算"></a>①运算</h6><p>​    第一类：</p>
 <p>​        关系运算即大于、小于、等于等关系运算，与java中的一致。</p>
 <p>​    第二类：</p>
 <p>​        逻辑运算，包括：</p>
@@ -351,6 +351,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/06/12/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(2)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          EL表达式和JSTL学习复习(2)
+        
+      </div>
+    </a>
   
   
     <a href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
