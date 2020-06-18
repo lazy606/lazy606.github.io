@@ -158,6 +158,205 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-javaWeb中的Cookie和Session复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/">javaWeb中的Cookie和Session复习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-06-18T12:20:08.995Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Cookie复习"><a href="#一、Cookie复习" class="headerlink" title="一、Cookie复习"></a>一、Cookie复习</h2><h4 id="1-Cookie作用"><a href="#1-Cookie作用" class="headerlink" title="1.Cookie作用"></a>1.Cookie作用</h4><p>​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。</p>
+<h4 id="2-Cookie的常用操作"><a href="#2-Cookie的常用操作" class="headerlink" title="2.Cookie的常用操作"></a>2.Cookie的常用操作</h4><pre><code>######     ①创建Cookie</code></pre><p>​        直接使用 new 方法即可创建对象： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Cookie对象</span></span><br><span class="line">     Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key1"</span>, <span class="string">"value1"</span>);</span><br><span class="line"></span><br><span class="line">     <span class="comment">//将Cookie对象添加到响应里面</span></span><br><span class="line">     resp.addCookie(cookie);</span><br></pre></td></tr></table></figure>
+
+<h6 id="②在服务器端获取Cookie"><a href="#②在服务器端获取Cookie" class="headerlink" title="②在服务器端获取Cookie"></a>②在服务器端获取Cookie</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取Cookie数组</span></span><br><span class="line">        Cookie[] cookies = rep.getCookies();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取特定的Cookie</span></span><br><span class="line">        <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"key1"</span>.equalsIgnoreCase(cookie.getName()))&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    resp.getWriter().write(<span class="string">"获取到Cookie，Name:"</span> + cookie.getName() + <span class="string">" Value:"</span> + cookie.getValue());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>######     ③修改Cookie的值</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方案一</span></span><br><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key1"</span>, <span class="string">"newValue1"</span>);</span><br><span class="line">resp.addCookie(cookie);</span><br><span class="line">resp.getWriter().write(<span class="string">"方案一修改完成"</span>);</span><br><span class="line"><span class="comment">//方案二</span></span><br><span class="line">Cookie[] cookies = rep.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">"key1"</span>.equalsIgnoreCase(cookie.getName()))&#123;</span><br><span class="line">        cookie.setValue(<span class="string">"newValue2"</span>);</span><br><span class="line">        resp.addCookie(cookie);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>######     ④Cookie的生命周期</code></pre><p>​        第一步，获取默认生命周期: 结果为-1；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key2"</span>, <span class="string">"value2"</span>);</span><br><span class="line"><span class="keyword">int</span> maxAge = cookie.getMaxAge();</span><br></pre></td></tr></table></figure>
+
+<p>​        第二步,设置声明周期：单位为秒</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key3"</span>, <span class="string">"value3"</span>);</span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span>);</span><br></pre></td></tr></table></figure>
+
+<p>​            其中：</p>
+<p>​                    负数表示把生命周期设置为当前会话，</p>
+<p>​                    0表示立刻删除该Cookie，</p>
+<p>​                    整数表示生命周期为相应的秒数。</p>
+<h5 id="⑤Cookie的路径设置"><a href="#⑤Cookie的路径设置" class="headerlink" title="⑤Cookie的路径设置"></a>⑤Cookie的路径设置</h5><p>​        Cookie的路径设置是用来控制Cookie在请求中发送的，例如：</p>
+<p>​        CookieA的Path为 <a href="http://ip:port/工程路径，CookieB的Path为http://ip:port/工程路径/abc">http://ip:port/工程路径，CookieB的Path为http://ip:port/工程路径/abc</a>.</p>
+<p>​        那么当访问页面 <a href="http://ip:port/工程路径/x.html">http://ip:port/工程路径/x.html</a> 时，CookieA将会在请求头中而CookieB则不会被发送，</p>
+<p>​        访问页面  <a href="http://ip:port/工程路径/abc/x.html">http://ip:port/工程路径/abc/x.html</a> 时，CookieB将会在请求头中同时CookieA也会在请求头中。</p>
+<p>​        设置代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key4"</span>, <span class="string">"value4"</span>);</span><br><span class="line">cookie.setPath(<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、Session复习"><a href="#二、Session复习" class="headerlink" title="二、Session复习"></a>二、Session复习</h2><h4 id="1-Session作用"><a href="#1-Session作用" class="headerlink" title="1.Session作用"></a>1.Session作用</h4><p>​    Session是一种用来维护客户端和服务端之间关联的一种技术，经常用来保存用户登录后的信息。</p>
+<h4 id="2-Session的常用操作"><a href="#2-Session的常用操作" class="headerlink" title="2.Session的常用操作"></a>2.Session的常用操作</h4><pre><code>######     ①Session的创建</code></pre><p>​        Session的创建只用一个API即  req.getSession() ，该API在第一次使用时创建Session对象，后面就不再创建Session对象，而是获取之前创建好的Session对象。</p>
+<p>​        如何判断使用了 req.getSession()方法后获取到的Session对象是新的还是旧的，可以使用 isNew() 方法来判断，也可以根据Session的id来判断。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = rep.getSession();</span><br><span class="line"></span><br><span class="line">resp.getWriter().write(<span class="string">"获取到了Session&lt;br/&gt;"</span>);</span><br><span class="line">resp.getWriter().write(<span class="string">"Session的id号为："</span> + session.getId() + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">resp.getWriter().write(<span class="string">"Session是否为新创建的："</span> + session.isNew() + <span class="string">"&lt;br/&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<pre><code>######     ②Session设置和获取参数</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = rep.getSession();</span><br><span class="line">session.setAttribute(<span class="string">"keySession"</span>, <span class="string">"valueSession"</span>);</span><br><span class="line">resp.getWriter().write(<span class="string">"设置的参数为："</span> + session.getAttribute(<span class="string">"keySession"</span>))</span><br></pre></td></tr></table></figure>
+
+<h6 id="③Session生命周期"><a href="#③Session生命周期" class="headerlink" title="③Session生命周期"></a>③Session生命周期</h6><p>​        Session使用 public void setMaxInactiveInterval(int interval)  设置 Session 的超时时间（以秒为单位），而这里知道超时时间是指不激活session的情况下的时间。</p>
+<p>​        Session设置默认生命周期：</p>
+<p>​            Session的默认生命周期没有相关的API来进行设置，需要在web.xml文件中配置相关的默认超时时间，tomcat默认的超时时间为30分钟</p>
+<p>​            Session中使用 public void setMaxInactiveInterval(int interval) 来设置个别Session的超时时间，正数表示相应的秒数，负数表示永不超时</p>
+<p>​            Session中使用 public void invalidate() 让当前 Session 会话马上超时无效。</p>
+<h2 id="三、浏览器和-Session-之间关联的技术内幕"><a href="#三、浏览器和-Session-之间关联的技术内幕" class="headerlink" title="三、浏览器和 Session 之间关联的技术内幕"></a>三、<strong>浏览器和</strong> <strong>Session</strong> <strong>之间关联的技术内幕</strong></h2><img src="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/1.png" class>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web中文件的上传和下载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/12/web%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/">web中文件的上传和下载</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/12/web%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/" class="archive-article-date">
+  	<time datetime="2020-06-12T09:16:14.489Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、文件的上传"><a href="#一、文件的上传" class="headerlink" title="一、文件的上传"></a>一、文件的上传</h2><h4 id="1-上传操作介绍"><a href="#1-上传操作介绍" class="headerlink" title="1.上传操作介绍"></a>1.上传操作介绍</h4><p>​    第一，要有一个from标签，method=post请求</p>
+<p>​    第二，from标签的encType属性必须为multipart/form-data值</p>
+<p>​    第三，在from标签中使用input type=file添加上传文件</p>
+<p>​    第四，编写服务其代码接手，处理上传的数据</p>
+<p>​    enctype=multipart/form-data 表示提交的数据，以多段的形式进行拼接，然后以二进制流的形式发送给服务器。</p>
+<h4 id="2-解析上传文件所使用的API"><a href="#2-解析上传文件所使用的API" class="headerlink" title="2.解析上传文件所使用的API"></a>2.解析上传文件所使用的API</h4><p>​    第一，导入两个jar包commons-fileupload-1.2.1.jar 和commons-io-1.4.jar；</p>
+<p>​    第二，API中常用的两个类，</p>
+<p>​        ServletFileupload类，用于解析上传表单的类；</p>
+<p>​        FileItem类，用来表示表单项；</p>
+<p>​    第三，API中的常用方法，</p>
+<p>​        Ⅰ.ServletFileUpload.isMultipartContent(HttpServletRequest request)：返回值为布尔类型，用来判断请求是否为多段数据；</p>
+<p>​        Ⅱ.parseRequest(HttpServletRequest request)：返回值为List<FileItem>类型，用来处理解析上传的数据。</FileItem></p>
+<p>​        Ⅲ.FileItem.isFormField()：返回值为布尔类型，用来判断当前表单是否为普通表单，是返回true，不是返回false。</p>
+<p>​        Ⅳ.FileItem.getFieldName()：获取表单name的属性值；</p>
+<p>​        Ⅴ.FileItem.getString()：获取表单的值；</p>
+<p>​        Ⅵ.FileItem.getName()：获取文件名；</p>
+<p>​        Ⅶ.FileItem.write(File file)：将上传的文件写道file所指向的硬盘位置；</p>
+<h4 id="3-具体操作流程"><a href="#3-具体操作流程" class="headerlink" title="3.具体操作流程"></a>3.具体操作流程</h4><p>​    第一步，创建一个页面，其中包含文件上传的form表单：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;$Title$&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">      &lt;form enctype=<span class="string">"multipart/form-data"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span> value=<span class="string">"lazy"</span>&gt;&lt;br&gt;</span><br><span class="line">        &lt;input type=<span class="string">"file"</span> name=<span class="string">"photo"</span>&gt;&lt;br&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"上传"</span>&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    第二步，在服务器端接收数据：</p>
+<p>​        错误演示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">String photo = req.getParameter(<span class="string">"photo"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>​        正确处理流程：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断上传类型是否为多段数据类型</span></span><br><span class="line"><span class="keyword">if</span>(ServletFileUpload.isMultipartContent(req))&#123;</span><br><span class="line">    <span class="comment">//创建ServletFileUploadFactory工厂实现类</span></span><br><span class="line">    DiskFileItemFactory diskFileItemFactory = <span class="keyword">new</span> DiskFileItemFactory();</span><br><span class="line">    <span class="comment">//如果为多段数据类型就处理</span></span><br><span class="line">    ServletFileUpload servletFileUpload = <span class="keyword">new</span> ServletFileUpload(diskFileItemFactory);</span><br><span class="line">    <span class="comment">//在此处设置编码集,解决文件名乱码</span></span><br><span class="line">    servletFileUpload.setHeaderEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        List&lt;FileItem&gt; fields = servletFileUpload.parseRequest(req);</span><br><span class="line">        <span class="comment">//遍历列表提取数据</span></span><br><span class="line">        <span class="keyword">for</span> (FileItem item: fields)&#123;</span><br><span class="line">            String name = item.getFieldName();</span><br><span class="line">            <span class="comment">//解决参数值中的乱码</span></span><br><span class="line">            String value = item.getString(<span class="string">"utf-8"</span>);</span><br><span class="line">            <span class="keyword">if</span>(!item.isFormField())&#123;</span><br><span class="line">                String fileName = item.getName();</span><br><span class="line">                System.out.println(<span class="string">"参数名为："</span> + name);</span><br><span class="line">                System.out.println(<span class="string">"文件名为："</span> + fileName);</span><br><span class="line">                <span class="comment">//将文件写到本地磁盘</span></span><br><span class="line">                item.write(<span class="keyword">new</span> File(<span class="string">"path"</span>));</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"参数名为："</span> + name);</span><br><span class="line">            System.out.println(<span class="string">"参数值为："</span> + value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、文件的下载"><a href="#二、文件的下载" class="headerlink" title="二、文件的下载"></a>二、文件的下载</h2><pre><code>#### 1.下载操作介绍</code></pre><p>​    第一，获取要下载的文件名；</p>
+<p>​    第二，告诉客户端该数据是用于下载；</p>
+<p>​    第三，在回传前设置响应头信息，告诉客户端返回的数据类型；</p>
+<p>​    第四，读取要下载的文件的内容；</p>
+<p>​    第五，把下载的文件内容回传给客户端；</p>
+<h4 id="2-操作流程"><a href="#2-操作流程" class="headerlink" title="2.操作流程"></a>2.操作流程</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一，获取要下载的文件名；</span></span><br><span class="line">        String fileName = req.getParameter(<span class="string">"filename"</span>);</span><br><span class="line"><span class="comment">//第二，在回传前设置响应头信息，告诉客户端返回的数据类型；</span></span><br><span class="line">        ServletContext servletContext = getServletContext();</span><br><span class="line">        <span class="comment">//获取文件的类型</span></span><br><span class="line">        String type = servletContext.getMimeType(<span class="string">"/images/"</span> + fileName);</span><br><span class="line">        resp.setContentType(type);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三，告诉客户端该数据是用于下载；</span></span><br><span class="line">        <span class="comment">//处理客户端下载时的乱码问题</span></span><br><span class="line">        resp.setHeader(<span class="string">"content-Disposition"</span>, <span class="string">"attachment; filename="</span> + URLEncoder.encode(<span class="string">"我的图片.png"</span>,<span class="string">"utf-8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//第四，读取要下载的文件的内容(通过ServletContext对象读取)；在放置资源后要重启服务器否则无法在配置文件中找到资源</span></span><br><span class="line"></span><br><span class="line">        InputStream resource = servletContext.getResourceAsStream(<span class="string">"/images/"</span> + fileName);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第五，把下载的文件内容回传给客户端,common-io包中有工具类进行流操作；</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取响应输出流</span></span><br><span class="line">        ServletOutputStream outputStream = resp.getOutputStream();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将输入流中的数据复制到输出流中通过http响应传到客户端</span></span><br><span class="line">        IOUtils.copy(resource,outputStream);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-学习BASE64编码器"><a href="#3-学习BASE64编码器" class="headerlink" title="3.学习BASE64编码器"></a>3.学习BASE64编码器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String str = <span class="string">"编码内容"</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] bytes = encoder.encode(str.getBytes(<span class="string">"utf-8"</span>));</span><br><span class="line">        System.out.println(<span class="keyword">new</span> String(bytes));</span><br><span class="line">        <span class="keyword">byte</span>[] str1 = decoder.decode(bytes);</span><br><span class="line">        System.out.println(<span class="keyword">new</span> String(str1));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/12/web%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-EL表达式和JSTL学习复习(2)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -694,149 +893,10 @@
 
 
   
-    <article id="post-如何在win10环境下使用Hexo+github免费搭建自己的个人网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">如何在win10环境下使用Hexo+github免费搭建自己的个人网站</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2020-06-05T14:06:50.587Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、搭建环境"><a href="#一、搭建环境" class="headerlink" title="一、搭建环境"></a>一、搭建环境</h2><h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h4 id="1-下载Node-js"><a href="#1-下载Node-js" class="headerlink" title="1.下载Node.js"></a>1.下载Node.js</h4><p>网站链接：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></p>
-<blockquote>
-<p>点击进入网站并选择LTS版本下载，安装过程为傻瓜式安装，无需过多操作一直点击下一步即可安装完成</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/05/%E5%A6%82%E4%BD%95%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo+github%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/04/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-04T02:19:17.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/04/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
