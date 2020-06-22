@@ -158,6 +158,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-javaWeb中的Cookie和Session复习/JavaWeb中的Filter过滤器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/22/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/">javaWeb中的Cookie和Session复习/JavaWeb中的Filter过滤器</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/22/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2020-06-22T08:54:05.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Filter过滤器"><a href="#Filter过滤器" class="headerlink" title="Filter过滤器"></a>Filter过滤器</h2><h4 id="1-Filter过滤器介绍"><a href="#1-Filter过滤器介绍" class="headerlink" title="1.Filter过滤器介绍"></a>1.Filter过滤器介绍</h4><p>​    Filter过滤器是javaweb三大组件之一，其作用主要有：拦截请求、过滤响应等等，其中拦截请求是最常用的。</p>
+<p>​    拦截请求即限制客户对某些资源的访问。</p>
+<h4 id="2-Filter过滤器操作流程"><a href="#2-Filter过滤器操作流程" class="headerlink" title="2.Filter过滤器操作流程"></a>2.Filter过滤器操作流程</h4>
+        
+          <a class="article-more-a" href="/2020/06/22/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/22/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-javaWeb中的Cookie和Session复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -179,45 +246,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、Cookie复习"><a href="#一、Cookie复习" class="headerlink" title="一、Cookie复习"></a>一、Cookie复习</h2><h4 id="1-Cookie作用"><a href="#1-Cookie作用" class="headerlink" title="1.Cookie作用"></a>1.Cookie作用</h4><p>​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。</p>
-<h4 id="2-Cookie的常用操作"><a href="#2-Cookie的常用操作" class="headerlink" title="2.Cookie的常用操作"></a>2.Cookie的常用操作</h4><pre><code>######     ①创建Cookie</code></pre><p>​        直接使用 new 方法即可创建对象： </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Cookie对象</span></span><br><span class="line">     Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key1"</span>, <span class="string">"value1"</span>);</span><br><span class="line"></span><br><span class="line">     <span class="comment">//将Cookie对象添加到响应里面</span></span><br><span class="line">     resp.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-
-<h6 id="②在服务器端获取Cookie"><a href="#②在服务器端获取Cookie" class="headerlink" title="②在服务器端获取Cookie"></a>②在服务器端获取Cookie</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取Cookie数组</span></span><br><span class="line">        Cookie[] cookies = rep.getCookies();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取特定的Cookie</span></span><br><span class="line">        <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"key1"</span>.equalsIgnoreCase(cookie.getName()))&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    resp.getWriter().write(<span class="string">"获取到Cookie，Name:"</span> + cookie.getName() + <span class="string">" Value:"</span> + cookie.getValue());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<pre><code>######     ③修改Cookie的值</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方案一</span></span><br><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key1"</span>, <span class="string">"newValue1"</span>);</span><br><span class="line">resp.addCookie(cookie);</span><br><span class="line">resp.getWriter().write(<span class="string">"方案一修改完成"</span>);</span><br><span class="line"><span class="comment">//方案二</span></span><br><span class="line">Cookie[] cookies = rep.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">"key1"</span>.equalsIgnoreCase(cookie.getName()))&#123;</span><br><span class="line">        cookie.setValue(<span class="string">"newValue2"</span>);</span><br><span class="line">        resp.addCookie(cookie);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<pre><code>######     ④Cookie的生命周期</code></pre><p>​        第一步，获取默认生命周期: 结果为-1；</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key2"</span>, <span class="string">"value2"</span>);</span><br><span class="line"><span class="keyword">int</span> maxAge = cookie.getMaxAge();</span><br></pre></td></tr></table></figure>
-
-<p>​        第二步,设置声明周期：单位为秒</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key3"</span>, <span class="string">"value3"</span>);</span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span>);</span><br></pre></td></tr></table></figure>
-
-<p>​            其中：</p>
-<p>​                    负数表示把生命周期设置为当前会话，</p>
-<p>​                    0表示立刻删除该Cookie，</p>
-<p>​                    整数表示生命周期为相应的秒数。</p>
-<h5 id="⑤Cookie的路径设置"><a href="#⑤Cookie的路径设置" class="headerlink" title="⑤Cookie的路径设置"></a>⑤Cookie的路径设置</h5><p>​        Cookie的路径设置是用来控制Cookie在请求中发送的，例如：</p>
-<p>​        CookieA的Path为 <a href="http://ip:port/工程路径，CookieB的Path为http://ip:port/工程路径/abc">http://ip:port/工程路径，CookieB的Path为http://ip:port/工程路径/abc</a>.</p>
-<p>​        那么当访问页面 <a href="http://ip:port/工程路径/x.html">http://ip:port/工程路径/x.html</a> 时，CookieA将会在请求头中而CookieB则不会被发送，</p>
-<p>​        访问页面  <a href="http://ip:port/工程路径/abc/x.html">http://ip:port/工程路径/abc/x.html</a> 时，CookieB将会在请求头中同时CookieA也会在请求头中。</p>
-<p>​        设置代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key4"</span>, <span class="string">"value4"</span>);</span><br><span class="line">cookie.setPath(<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、Session复习"><a href="#二、Session复习" class="headerlink" title="二、Session复习"></a>二、Session复习</h2><h4 id="1-Session作用"><a href="#1-Session作用" class="headerlink" title="1.Session作用"></a>1.Session作用</h4><p>​    Session是一种用来维护客户端和服务端之间关联的一种技术，经常用来保存用户登录后的信息。</p>
-<h4 id="2-Session的常用操作"><a href="#2-Session的常用操作" class="headerlink" title="2.Session的常用操作"></a>2.Session的常用操作</h4><pre><code>######     ①Session的创建</code></pre><p>​        Session的创建只用一个API即  req.getSession() ，该API在第一次使用时创建Session对象，后面就不再创建Session对象，而是获取之前创建好的Session对象。</p>
-<p>​        如何判断使用了 req.getSession()方法后获取到的Session对象是新的还是旧的，可以使用 isNew() 方法来判断，也可以根据Session的id来判断。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = rep.getSession();</span><br><span class="line"></span><br><span class="line">resp.getWriter().write(<span class="string">"获取到了Session&lt;br/&gt;"</span>);</span><br><span class="line">resp.getWriter().write(<span class="string">"Session的id号为："</span> + session.getId() + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">resp.getWriter().write(<span class="string">"Session是否为新创建的："</span> + session.isNew() + <span class="string">"&lt;br/&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<pre><code>######     ②Session设置和获取参数</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = rep.getSession();</span><br><span class="line">session.setAttribute(<span class="string">"keySession"</span>, <span class="string">"valueSession"</span>);</span><br><span class="line">resp.getWriter().write(<span class="string">"设置的参数为："</span> + session.getAttribute(<span class="string">"keySession"</span>))</span><br></pre></td></tr></table></figure>
-
-<h6 id="③Session生命周期"><a href="#③Session生命周期" class="headerlink" title="③Session生命周期"></a>③Session生命周期</h6><p>​        Session使用 public void setMaxInactiveInterval(int interval)  设置 Session 的超时时间（以秒为单位），而这里知道超时时间是指不激活session的情况下的时间。</p>
-<p>​        Session设置默认生命周期：</p>
-<p>​            Session的默认生命周期没有相关的API来进行设置，需要在web.xml文件中配置相关的默认超时时间，tomcat默认的超时时间为30分钟</p>
-<p>​            Session中使用 public void setMaxInactiveInterval(int interval) 来设置个别Session的超时时间，正数表示相应的秒数，负数表示永不超时</p>
-<p>​            Session中使用 public void invalidate() 让当前 Session 会话马上超时无效。</p>
-<h2 id="三、浏览器和-Session-之间关联的技术内幕"><a href="#三、浏览器和-Session-之间关联的技术内幕" class="headerlink" title="三、浏览器和 Session 之间关联的技术内幕"></a>三、<strong>浏览器和</strong> <strong>Session</strong> <strong>之间关联的技术内幕</strong></h2><img src="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/1.png" class>
-
-
+<h4 id="2-Cookie的常用操作"><a href="#2-Cookie的常用操作" class="headerlink" title="2.Cookie的常用操作"></a>2.Cookie的常用操作</h4>
+        
+          <a class="article-more-a" href="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/#more">more >></a>
+        
       
 
       
@@ -793,77 +825,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/07/Markdown%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-为个人博客设置主题和设置博客细节" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">为个人博客设置主题和设置博客细节</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/" class="archive-article-date">
-  	<time datetime="2020-06-06T13:06:04.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、如何设置个人博客的主题"><a href="#一、如何设置个人博客的主题" class="headerlink" title="一、如何设置个人博客的主题"></a>一、如何设置个人博客的主题</h2><h4 id="1-挑选主题"><a href="#1-挑选主题" class="headerlink" title="1.挑选主题"></a>1.挑选主题</h4><p>方式一：到官网去挑选喜欢的主题（但是有些主题页面可能丢失），网址如下：</p>
-<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
-<p>方式二：在csdn去搜素相关博客主题，csdn官网如下：</p>
-<p><a href="https://www.csdn.net/" target="_blank" rel="noopener">https://www.csdn.net/</a></p>
-<p>方式三：可以自己到百度上去搜索相关主题。</p>
-<p>方式四：推荐主题：</p>
-<p><a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> </p>
-        
-          <a class="article-more-a" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/06/%E4%B8%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BB%86%E8%8A%82/">展开全文 >></a>
         </p>
       
 

@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
   <title>javaWeb中的Cookie和Session复习 | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Cookie复习1.Cookie作用​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。 2.Cookie的常用操作######     ①创建Cookie​        直接使用 new 方法即可创建对象：  12345&#x2F;&#x2F;创建Cookie对象     Cookie cookie &#x3D; new Cookie(&quot;key1&quot;, &quot;va">
+  <meta name="description" content="一、Cookie复习1.Cookie作用​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。 2.Cookie的常用操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaWeb中的Cookie和Session复习">
 <meta property="og:url" content="http://lazyprogrammer.com/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="一、Cookie复习1.Cookie作用​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。 2.Cookie的常用操作######     ①创建Cookie​        直接使用 new 方法即可创建对象：  12345&#x2F;&#x2F;创建Cookie对象     Cookie cookie &#x3D; new Cookie(&quot;key1&quot;, &quot;va">
+<meta property="og:description" content="一、Cookie复习1.Cookie作用​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。 2.Cookie的常用操作">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://lazyprogrammer.com/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/1.png">
 <meta property="article:published_time" content="2020-06-18T12:20:08.995Z">
-<meta property="article:modified_time" content="2020-06-18T14:13:21.667Z">
+<meta property="article:modified_time" content="2020-06-18T14:15:40.849Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://lazyprogrammer.com/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/1.png">
@@ -181,7 +181,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、Cookie复习"><a href="#一、Cookie复习" class="headerlink" title="一、Cookie复习"></a>一、Cookie复习</h2><h4 id="1-Cookie作用"><a href="#1-Cookie作用" class="headerlink" title="1.Cookie作用"></a>1.Cookie作用</h4><p>​        Cookie是在服务器端的小段数据，一般是键值对的形式，是服务器通知浏览器（客户端）的一种技术。</p>
-<h4 id="2-Cookie的常用操作"><a href="#2-Cookie的常用操作" class="headerlink" title="2.Cookie的常用操作"></a>2.Cookie的常用操作</h4><pre><code>######     ①创建Cookie</code></pre><p>​        直接使用 new 方法即可创建对象： </p>
+<h4 id="2-Cookie的常用操作"><a href="#2-Cookie的常用操作" class="headerlink" title="2.Cookie的常用操作"></a>2.Cookie的常用操作</h4><a id="more"></a>
+
+<h6 id="①创建Cookie"><a href="#①创建Cookie" class="headerlink" title="①创建Cookie"></a>①创建Cookie</h6><p>​        直接使用 new 方法即可创建对象： </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Cookie对象</span></span><br><span class="line">     Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"key1"</span>, <span class="string">"value1"</span>);</span><br><span class="line"></span><br><span class="line">     <span class="comment">//将Cookie对象添加到响应里面</span></span><br><span class="line">     resp.addCookie(cookie);</span><br></pre></td></tr></table></figure>
 
 <h6 id="②在服务器端获取Cookie"><a href="#②在服务器端获取Cookie" class="headerlink" title="②在服务器端获取Cookie"></a>②在服务器端获取Cookie</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取Cookie数组</span></span><br><span class="line">        Cookie[] cookies = rep.getCookies();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取特定的Cookie</span></span><br><span class="line">        <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"key1"</span>.equalsIgnoreCase(cookie.getName()))&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    resp.getWriter().write(<span class="string">"获取到Cookie，Name:"</span> + cookie.getName() + <span class="string">" Value:"</span> + cookie.getValue());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
@@ -311,6 +313,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/06/22/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          javaWeb中的Cookie和Session复习/JavaWeb中的Filter过滤器
+        
+      </div>
+    </a>
   
   
     <a href="/2020/06/12/web%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/" id="article-nav-older" class="article-nav-link-wrap">

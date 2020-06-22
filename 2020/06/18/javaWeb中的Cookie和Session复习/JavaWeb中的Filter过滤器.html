@@ -1,0 +1,73 @@
+<h2 id="Filter过滤器"><a href="#Filter过滤器" class="headerlink" title="Filter过滤器"></a>Filter过滤器</h2><h4 id="1-Filter过滤器介绍"><a href="#1-Filter过滤器介绍" class="headerlink" title="1.Filter过滤器介绍"></a>1.Filter过滤器介绍</h4><p>​    Filter过滤器是javaweb三大组件之一，其作用主要有：拦截请求、过滤响应等等，其中拦截请求是最常用的。</p>
+<p>​    拦截请求即限制客户对某些资源的访问。</p>
+<h4 id="2-Filter过滤器操作流程"><a href="#2-Filter过滤器操作流程" class="headerlink" title="2.Filter过滤器操作流程"></a>2.Filter过滤器操作流程</h4><!-- more -->
+
+<pre><code>第一步，创建一个Filter接口的实现类：</code></pre><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>{
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>{
+
+    }
+
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>{
+
+    }
+
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>{
+
+    }
+}
+</code></pre>
+<p>​    第二步，在web.xml文件中配置Filter过滤器信息：</p>
+<pre><code class="xml"><span class="tag">&lt;<span class="name">filter</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>TestFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.lazy.Filter.TestFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">filter</span>&gt;</span>
+<span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>TestFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/a.html<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></code></pre>
+<p>​        其中<filter-name>TestFilter</filter-name>为过滤器的名称，<filter-class>com.lazy.Filter.TestFilter</filter-class>为过滤器的全类名，</p>
+<p><url-pattern>/a.html</url-pattern>为要进行拦截操作的资源名，该资源有多种匹配方法：</p>
+<p>​            第一类：精准匹配：</p>
+<p>​                <url-pattern>/a.html</url-pattern>，该方式就精准匹配到网站中的a.html文件</p>
+<p>​            第二类：目录匹配：</p>
+<p>​                <url-pattern>/abc/*</url-pattern>，该方式就匹配到网站中abc目录下的所有资源</p>
+<p>​            第三类：后缀匹配：</p>
+<p>​                <url-pattern>*.html</url-pattern>，该方式就匹配到网站中所有的html文件，但是并不一定是文件，可以是任意后缀名，例如：</p>
+<p>​                <url-pattern>*.abcde</url-pattern></p>
+<p>​        并且匹配不仅仅只限于一种模式可以同时有多种匹配模式：</p>
+<pre><code class="xml"><span class="tag">&lt;<span class="name">filter</span>&gt;</span>
+     <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>TestFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>
+     <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.lazy.Filter.TestFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span>
+ <span class="tag">&lt;/<span class="name">filter</span>&gt;</span>
+ <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span>
+     <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>TestFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>
+     <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/a.html<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span>
+     <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/abc/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span>
+     <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.abcde<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span>
+ <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></code></pre>
+<p>​    第三步，实现Filter接口中的方法：</p>
+<p>​        其中有四个方法，分别是：构造方法、init(FilterConfig filterConfig)方法、doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)方法、destroy()方法。我们主要关注的是doFilter()方法，该方法可分为三部分：</p>
+<pre><code class="java"><span class="comment">//前置代码</span>
+
+filterChain.doFilter(servletRequest, servletResponse);
+
+<span class="comment">//后置代码</span></code></pre>
+<h4 id="3-Filter过滤器中各个方法介绍"><a href="#3-Filter过滤器中各个方法介绍" class="headerlink" title="3.Filter过滤器中各个方法介绍"></a>3.Filter过滤器中各个方法介绍</h4><p>​    方法一：</p>
+<p>​        构造方法，当服务器启动时会创建Filter的实现类对象，此时便会调用Filter的构造方法；</p>
+<p>​    方法二：</p>
+<p>​        init(FilterConfig filterConfig)方法，初始化方法，当Filter创建好之后会调用此方法进行初始化，其中的 FilterConfig filterConfig 是在创建时生成的一个配置参数对象，他有如下作用：</p>
+<p>​            1.获取过滤器名称：</p>
+<pre><code class="java">filterConfig.getFilterName();<span class="comment">//调用getFilterName</span></code></pre>
+<p>​            2.获取配置文件中 init-param 参数：</p>
+<pre><code class="java">filterConfig.getInitParameter(<span class="string">"paramName"</span>);</code></pre>
+<p>​            3.获取ServletContext类的对象：</p>
+<pre><code class="java">filterConfig.getServletContext();</code></pre>
+<p>​    方法三：</p>
+<p>​        destroy()方法，但服务器关闭时Filter过滤器销毁时会调用此方法；</p>
+<p>​    方法四：</p>
+<p>​        doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)方法，该方法时Filter过滤器的核心方法，是当匹配的资源访问时，对访问请求进行操作处理的方法，其中的ServletRequest servletRequest为请求对象，ServletResponse servletResponse为响应对象，分别对请求和访问进行操作的对象。</p>
+<p>​        其中的 FilterChain filterChain 是过滤器链对象，当有多个过滤器时使用其 doFilter(servletRequest, servletResponse) 方法进入到下一个过滤器中进行相关操作，过滤器执行的顺序取决于你在web.xml文件中配置的顺序。当之后没有过滤器时，就可以根据处理的情况看时放行到资源还是进行其他操作。</p>
+<p>​    </p>
