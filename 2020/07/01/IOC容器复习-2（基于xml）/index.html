@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lazyProgrammer.com">
-  <title>Archives | lazyBlog</title>
+  <title>IOC容器复习-2（基于xml） | lazyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="From Zero to the DevOps">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lazyBlog">
-<meta property="og:url" content="http://lazyprogrammer.com/archives/index.html">
+  <meta name="description" content="IOC容器一、Bean管理①Bean管理操作之FactoryBean​    Spring中有两种类型的Bean，一种是普通Bean即在配置文件中bean标签定义是什么类型返回就是什么类型，一种是工厂Bean类型在配置文件中bean标签定义的一种类型而返回的是另一种类型，工厂Bean操作如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IOC容器复习-2（基于xml）">
+<meta property="og:url" content="http://lazyprogrammer.com/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/index.html">
 <meta property="og:site_name" content="lazyBlog">
-<meta property="og:description" content="From Zero to the DevOps">
+<meta property="og:description" content="IOC容器一、Bean管理①Bean管理操作之FactoryBean​    Spring中有两种类型的Bean，一种是普通Bean即在配置文件中bean标签定义是什么类型返回就是什么类型，一种是工厂Bean类型在配置文件中bean标签定义的一种类型而返回的是另一种类型，工厂Bean操作如下：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/1.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/2.png">
+<meta property="og:image" content="http://lazyprogrammer.com/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/3.png">
+<meta property="article:published_time" content="2020-07-01T09:33:50.542Z">
+<meta property="article:modified_time" content="2020-07-02T03:17:58.239Z">
 <meta property="article:author" content="lazy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lazyprogrammer.com/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/1.png">
   
     <link rel="alternative" href="/atom.xml" title="lazyBlog" type="application/atom+xml">
   
@@ -156,295 +162,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-IOC容器复习-2（基于xml）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-07-02T13:18:32.157Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/">IOC容器复习（基于注解）</a>
+    <h1 class="article-title" itemprop="name">
+      IOC容器复习-2（基于xml）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" class="archive-article-date">
+        
+        <a href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-07-01T09:33:50.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/">IOC容器复习-2（基于xml）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IOC容器"><a href="#IOC容器" class="headerlink" title="IOC容器"></a>IOC容器</h2><h4 id="一、Bean管理"><a href="#一、Bean管理" class="headerlink" title="一、Bean管理"></a>一、Bean管理</h4><h6 id="①Bean管理操作之FactoryBean"><a href="#①Bean管理操作之FactoryBean" class="headerlink" title="①Bean管理操作之FactoryBean"></a>①Bean管理操作之FactoryBean</h6><p>​    Spring中有两种类型的Bean，一种是普通Bean即<strong>在配置文件中bean标签定义是什么类型返回就是什么类型</strong>，一种是工厂Bean类型<strong>在配置文件中bean标签定义的一种类型而返回的是另一种类型</strong>，工厂Bean操作如下：</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>​    第一步，创建JavaBean并继承FactoryBean接口，实现其中的方法；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFactoryBean</span> <span class="keyword">implements</span> <span class="title">FactoryBean</span>&lt;<span class="title">Person</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person <span class="title">getObject</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">        ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"di5.xml"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (Person) context.getBean(<span class="string">"person"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Class&lt;?&gt; getObjectType() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
+
+<p>​    第二步，在配置文件中配置该JavaBean；</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"myFactoryBean"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di5.bean.MyFactoryBean"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di1.bean.Person"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"lazy"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"1001"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    第三步，获取并调用对象；</p>
+<h6 id="②Bean管理操作之Bean的作用域"><a href="#②Bean管理操作之Bean的作用域" class="headerlink" title="②Bean管理操作之Bean的作用域"></a>②Bean管理操作之Bean的作用域</h6><p>​    在默认情况下使用 ApplicationContext 对应在子接口的实现类的对象在调用 getBean 方法时获取到的对象为单例即为同一个对象，如果有需要可以在xml文件中配置相关属性改变其单例属性，演示如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"di6.xml"</span>);</span><br><span class="line"></span><br><span class="line">Person person1 = (Person) context.getBean(<span class="string">"person"</span>);</span><br><span class="line"></span><br><span class="line">Person person2 = (Person) context.getBean(<span class="string">"person"</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(person1 == person2);</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/1.png" class>
+
+<p>​    </p>
+<p>​    在配置文件中修改相关属性：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di1.bean.Person"</span> <span class="attr">scope</span>=<span class="string">"prototype"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"lazy1"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"1001"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        scope属性用来设置作用域，singleton值表示单例，prototype表示多例；    </p>
+<p>​    测试结果如下：</p>
+<img src="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/2.png" class>
+
+<h6 id="③Bean管理之Bean的生命周期"><a href="#③Bean管理之Bean的生命周期" class="headerlink" title="③Bean管理之Bean的生命周期"></a>③Bean管理之Bean的生命周期</h6><p>​    Bean的生命周期的七个过程：</p>
+<p>​        (1)使用构造器创建Bean实例(无参构造器)；</p>
+<p>​        (2)为Bean的属性设置值和应用其他Bean的实例；</p>
+<p>​        (3)在调用Bean的初始化方法之前的后置处理器调用方法；</p>
+<p>​        (4)调用Bean的初始化方法；</p>
+<p>​        (5)在调用Bean的初始方法法之后的后置处理器调用方法；</p>
+<p>​        (6)Bean实例被调用；</p>
+<p>​        (7)Bean实例被销毁；</p>
+<p>​    需要再配置文件中配置相关的初始化方法、销毁方法以及对应的传递处理器：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di7.bean.Person"</span> <span class="attr">init-method</span>=<span class="string">"initMethod"</span> <span class="attr">destroy-method</span>=<span class="string">"destroyMethod"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"lazy"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"1001"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 该处理器为所有Bean通用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"myPostProcess"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di7.bean.MyProcess"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    Bean的代码如下：    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"第一步"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"第二步"</span>);</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initMethod</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"第三步"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroyMethod</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"第五步"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    传递处理器的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyProcess</span> <span class="keyword">implements</span> <span class="title">BeanPostProcessor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"第三步之前"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"第三步之后"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="④Bean管理操作之自动装配"><a href="#④Bean管理操作之自动装配" class="headerlink" title="④Bean管理操作之自动装配"></a>④Bean管理操作之自动装配</h6><p>​    自动装配是指，再配置文件中能够根据某些只来为属性注入值，一般常见的有根据名称注入<strong>byName</strong>和根据属性注入<strong>byType</strong>两种：</p>
+<p>​        第一种：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di8.bean.Person"</span> <span class="attr">autowire</span>=<span class="string">"byName"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 根据名称注入要注意的是外部bean的名称要与你属性的名称想同 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"lazy"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"car"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di8.bean.Car"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"brand"</span> <span class="attr">value</span>=<span class="string">"auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​        第二种：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di8.bean.Person"</span> <span class="attr">autowire</span>=<span class="string">"byType"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 根据类型注入要求你的外部Bean的类型要与属性类型一致且不存在多个相同类型的外部Bean --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"lazy"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"car"</span> <span class="attr">class</span>=<span class="string">"com.lazy.di8.bean.Car"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"brand"</span> <span class="attr">value</span>=<span class="string">"auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/3.png" class>
+
+<h5 id="⑤Bean管理之外部文件引用"><a href="#⑤Bean管理之外部文件引用" class="headerlink" title="⑤Bean管理之外部文件引用"></a>⑤Bean管理之外部文件引用</h5><p>​    在配置一些信息如数据库信息时，我们常常将一些固定的信息如用户名、密码等信息放在一个properties文件中而不是放在代码中，IOC也提供了相关操作：</p>
+<p>​        配置相关的命名空间：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    在xml文件中引用配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:jdbc.properties"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:property-placeholder</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    在xml文件中创建对象：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"com.alibaba.druid.pool.DruidDataSource"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"$&#123;pro.driverClassName&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;pro.url&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;pro.username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;pro.password&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">bean&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lazyprogrammer.com/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-07-01T07:07:13.379Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          IOC容器复习（基于注解）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IOC容器复习-1（基于xml）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/">IOC容器复习-1（基于xml）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/01/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  	<time datetime="2020-07-01T06:45:42.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/01/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">spring框架简介</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/23/json_ajax_i18n%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-23T11:28:01.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/23/json_ajax_i18n%E5%A4%8D%E4%B9%A0/">json_ajax_i18n复习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/22/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-06-22T13:55:03.320Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/JavaWeb%E4%B8%AD%E7%9A%84Filter%E8%BF%87%E6%BB%A4%E5%99%A8/">JavaWeb中的Filter过滤器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-18T12:20:08.995Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/18/javaWeb%E4%B8%AD%E7%9A%84Cookie%E5%92%8CSession%E5%A4%8D%E4%B9%A0/">javaWeb中的Cookie和Session复习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/12/web%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/" class="archive-article-date">
-  	<time datetime="2020-06-12T09:16:14.489Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/12/web%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/">web中文件的上传和下载</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/12/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(2)/" class="archive-article-date">
-  	<time datetime="2020-06-12T07:16:53.034Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/12/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(2)/">EL表达式和JSTL学习复习(2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/" class="archive-article-date">
-  	<time datetime="2020-06-11T12:46:13.348Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/">EL表达式和JSTL学习复习(1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -468,8 +403,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

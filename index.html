@@ -158,6 +158,284 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-IOC容器复习（基于注解）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/">IOC容器复习（基于注解）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-07-02T13:18:32.157Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IOC容器（基于注解方式）"><a href="#IOC容器（基于注解方式）" class="headerlink" title="IOC容器（基于注解方式）"></a>IOC容器（基于注解方式）</h2><h4 id="一、Bean管理之创建"><a href="#一、Bean管理之创建" class="headerlink" title="一、Bean管理之创建"></a>一、Bean管理之创建</h4><h6 id="①Spring提供的创建对象提供的注解"><a href="#①Spring提供的创建对象提供的注解" class="headerlink" title="①Spring提供的创建对象提供的注解"></a>①Spring提供的创建对象提供的注解</h6><p>​    (1)@Component；</p>
+<p>​    (2)@Controller；</p>
+<p>​    (3)@Service;</p>
+<p>​    (4)@Repository;</p>
+<p>​    这四个注解都是创建对象的注解，功能完全相同，只是推荐应用的地方不同，如：Controller推荐用在Web层，Service推荐用在Service层，Repository推荐使用在Dao层；</p>
+        
+          <a class="article-more-a" href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/02/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-IOC容器复习-2（基于xml）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/">IOC容器复习-2（基于xml）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-07-01T09:33:50.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IOC容器"><a href="#IOC容器" class="headerlink" title="IOC容器"></a>IOC容器</h2><h4 id="一、Bean管理"><a href="#一、Bean管理" class="headerlink" title="一、Bean管理"></a>一、Bean管理</h4><h6 id="①Bean管理操作之FactoryBean"><a href="#①Bean管理操作之FactoryBean" class="headerlink" title="①Bean管理操作之FactoryBean"></a>①Bean管理操作之FactoryBean</h6><p>​    Spring中有两种类型的Bean，一种是普通Bean即<strong>在配置文件中bean标签定义是什么类型返回就是什么类型</strong>，一种是工厂Bean类型<strong>在配置文件中bean标签定义的一种类型而返回的是另一种类型</strong>，工厂Bean操作如下：</p>
+        
+          <a class="article-more-a" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-2%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-IOC容器复习-1（基于xml）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/">IOC容器复习-1（基于xml）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-07-01T07:07:13.379Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、IOC容器原理和概念"><a href="#一、IOC容器原理和概念" class="headerlink" title="一、IOC容器原理和概念"></a>一、IOC容器原理和概念</h2><h4 id="1-什么是IOC"><a href="#1-什么是IOC" class="headerlink" title="1.什么是IOC"></a>1.什么是IOC</h4><p>​    ioc即控制反转，将对象创建和对象调用的过程交由Spring进行管理；</p>
+<h4 id="2-为什么要使用IOC"><a href="#2-为什么要使用IOC" class="headerlink" title="2.为什么要使用IOC"></a>2.为什么要使用IOC</h4><p>​    目的为了降低代码之间的耦合度；</p>
+        
+          <a class="article-more-a" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/IOC%E5%AE%B9%E5%99%A8%E5%A4%8D%E4%B9%A0-1%EF%BC%88%E5%9F%BA%E4%BA%8Exml%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring框架简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/01/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">spring框架简介</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/01/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/" class="archive-article-date">
+  	<time datetime="2020-07-01T06:45:42.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Spring框架概述"><a href="#一、Spring框架概述" class="headerlink" title="一、Spring框架概述"></a>一、Spring框架概述</h2><h4 id="1-spring框架组成"><a href="#1-spring框架组成" class="headerlink" title="1.spring框架组成"></a>1.spring框架组成</h4><p>​    ①：IOC容器;</p>
+<p>​    ②：Aop；</p>
+<p>​    ③：JdbcTemplate；</p>
+<p>​    ④：事务管理；</p>
+<p>​    额外介绍：spring5新特性</p>
+<h4 id="2-spring两大核心"><a href="#2-spring两大核心" class="headerlink" title="2.spring两大核心"></a>2.spring两大核心</h4><p>​    IOC容器和Aop面向切面</p>
+<h4 id="3-入门案例"><a href="#3-入门案例" class="headerlink" title="3.入门案例"></a>3.入门案例</h4><p>​    第一步，导入spring相关的包并加入模块的依赖；</p>
+<img src="/2020/07/01/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/1.png" class>
+
+<p>​    第二步，创建相关JavaBean；</p>
+<p>​    第三步，在配置xml文件中创建JavaBean对象</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.lazy.demo.Person"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    第四步，在调用创建的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBegin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//1.加载配置文件</span></span><br><span class="line">    ClassPathXmlApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"demo.xml"</span>);</span><br><span class="line">    <span class="comment">//2.获取创建的对象</span></span><br><span class="line">    Person person = (Person) context.getBean(<span class="string">"person"</span>);</span><br><span class="line">    <span class="comment">//3.调用对象</span></span><br><span class="line">    System.out.println(person);</span><br><span class="line">    person.say();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-json_ajax_i18n复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -557,274 +835,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/11/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8CJSTL%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0(1)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Jsp学习复习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">Jsp学习复习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-10T09:30:47.026Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、jsp基本介绍"><a href="#一、jsp基本介绍" class="headerlink" title="一、jsp基本介绍"></a>一、jsp基本介绍</h2><h4 id="1-什么是jsp"><a href="#1-什么是jsp" class="headerlink" title="1.什么是jsp"></a>1.什么是jsp</h4><p>​    jsp是java service pages的简写，jsp本质上来讲也是servlet程序，由源码可知：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">index</span> <span class="keyword">extends</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">HttpJspBase</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">JspSourceDependent</span>,</span></span><br><span class="line"><span class="class">                 <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">JspSourceImports</span></span></span><br></pre></td></tr></table></figure>
-
-<p>​    其中org.apache.jasper.runtime.HttpJspBase继承了HttpServlet类，所以可知jsp也是servlet程序。</p>
-        
-          <a class="article-more-a" href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/10/Jsp%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaWeb编写过程复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/">JavaWeb编写过程复习</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-09T12:49:43.918Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、JavaWeb流程图解"><a href="#一、JavaWeb流程图解" class="headerlink" title="一、JavaWeb流程图解"></a>一、JavaWeb流程图解</h2><img src="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/1.png" class>
-        
-          <a class="article-more-a" href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/09/JavaWeb%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客中图片显示问题的解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">博客中图片显示问题的解决</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  	<time datetime="2020-06-09T12:24:20.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="解决博客图片显示的问题"><a href="#解决博客图片显示的问题" class="headerlink" title="解决博客图片显示的问题"></a>解决博客图片显示的问题</h2><p>在书写博客的过程中，我发现使用Markdown本身的图片标签存在显示问题，当我们不是使用本地访问的方式时，我们无法获得图片，示例如下：</p>
-<img src="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/Users\Viva La Vida\Desktop\980e45ed1b72f87eb76d12c89714f2e.jpg" alt="980e45ed1b72f87eb76d12c89714f2e" style="zoom:50%;">
-        
-          <a class="article-more-a" href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/09/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-servlet相关知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">servlet相关知识</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-06-08T13:06:03.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、HttpServletRequest类"><a href="#一、HttpServletRequest类" class="headerlink" title="一、HttpServletRequest类"></a>一、HttpServletRequest类</h2><h4 id="1-主要用法"><a href="#1-主要用法" class="headerlink" title="1.主要用法"></a>1.主要用法</h4><h6 id="①获取请求参数值"><a href="#①获取请求参数值" class="headerlink" title="①获取请求参数值"></a>①获取请求参数值</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletTest</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">        System.out.println(username);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/1.png" class>
-
-<img src="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/2.png" class>
-        
-          <a class="article-more-a" href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/08/servlet%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">展开全文 >></a>
         </p>
       
 
